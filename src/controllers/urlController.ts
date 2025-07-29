@@ -2,11 +2,15 @@ import { Request, Response } from "express";
 import { nanoid } from "nanoid";
 import Url from "../models/Url";
 import path from 'path';
+import dotenv from "dotenv"
+
+dotenv.config();
 
 export const shortenUrl = async (req: Request, res: Response) => {
   try {
     const { originalUrl, expiresAt } = req.body;
     const userId = (req as any).user.id;
+    const publicUrl = process.env.PUBLIC_URL
 
     if (!originalUrl) {
       return res.status(400).json({ message: "originalUrl is required" });
@@ -24,7 +28,7 @@ export const shortenUrl = async (req: Request, res: Response) => {
     }
 
     const shortCode = nanoid(6);
-    const shortUrl = `http://localhost:8080/${shortCode}`;
+    const shortUrl = `${publicUrl}/${shortCode}`;
 
     const newUrl = await Url.create({
       originalUrl,
