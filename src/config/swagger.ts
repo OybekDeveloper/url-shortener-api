@@ -1,4 +1,7 @@
 import swaggerJSDoc from 'swagger-jsdoc';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const swaggerOptions: swaggerJSDoc.Options = {
   definition: {
@@ -10,7 +13,7 @@ export const swaggerOptions: swaggerJSDoc.Options = {
     },
     servers: [
       {
-        url: 'http://localhost:8080',
+        url: process.env.PUBLIC_URL || 'http://localhost:8080',
       },
     ],
     components: {
@@ -24,7 +27,7 @@ export const swaggerOptions: swaggerJSDoc.Options = {
     },
     security: [{ bearerAuth: [] }],
   },
-  apis: ['./src/routes/*.ts'], // shu fayllarda @swagger yoziladi
+  apis: ['./src/routes/*.ts'], // @swagger yoziladigan joylar
 };
 
 export default swaggerJSDoc(swaggerOptions);

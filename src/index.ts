@@ -6,12 +6,14 @@ import urlRoutes from "./routes/urlRoutes";
 import { redirectToOriginalUrl } from "./controllers/urlController";
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './config/swagger'; // manzilga qarab o‘zgartiring
+import cors from 'cors';
 
 
 dotenv.config();
 
 // Initialize Express app
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
