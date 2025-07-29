@@ -22,6 +22,21 @@ It allows users to register, log in, and generate short URLs with optional expir
 - bcrypt
 - nanoid
 
+## 📚 API Documentation — Swagger
+
+This project includes full Swagger/OpenAPI documentation.
+
+🔗 **URL**: `http://localhost:8080/api-docs`
+
+You can use Swagger to:
+- View all available endpoints
+- Test endpoints (with Bearer Token auth)
+- Understand request/response schemas
+
+> ✅ Make sure your app is running before opening Swagger UI.
+
+---
+
 ## Setup Instructions
 
 ### 1. Clone the repository
