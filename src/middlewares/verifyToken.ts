@@ -23,7 +23,7 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
       next();
     });
   } catch (error) {
-    console.error('❌ Error in verifyToken middleware:', error);
+    console.error('Error in verifyToken middleware:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
 };

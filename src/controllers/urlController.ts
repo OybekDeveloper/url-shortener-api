@@ -20,7 +20,7 @@ export const shortenUrl = async (req: Request, res: Response) => {
       }
       expirationDate = parsed;
     } else {
-      expirationDate = new Date(Date.now() + 60 * 60 * 1000); // default 30min
+      expirationDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // default 30min
     }
 
     const shortCode = nanoid(6);

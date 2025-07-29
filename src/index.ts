@@ -4,6 +4,9 @@ import mongoose from "mongoose";
 import authRoutes from './routes/authRoutes';
 import urlRoutes from "./routes/urlRoutes";
 import { redirectToOriginalUrl } from "./controllers/urlController";
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './config/swagger'; // manzilga qarab o‘zgartiring
+
 
 dotenv.config();
 
@@ -11,6 +14,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
 app.get("/", (_, res) => {
