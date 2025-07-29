@@ -27,7 +27,7 @@ It allows users to register, log in, and generate short URLs with optional expir
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/url-shortener-api.git
+git clone https://github.com/OybekDeveloper/url-shortener-api.git
 cd url-shortener-api
 ```
 
@@ -120,18 +120,6 @@ Redirects to the original URL if valid and not expired.
 - GET /stats/:shortCode  
 Returns stats like number of visits, creation date, expiration time.
 
-## HTML Form (optional)
-
-You can access the test form at:
-
-```
-http://localhost:8080/form
-```
-
-There you can submit originalUrl and optional expiresAt using a basic interface.
-
-Note: You must manually add your access token in the form's JavaScript for authenticated requests.
-
 ## Folder Structure
 
 ```
@@ -143,7 +131,6 @@ src/
 ├── utils/
 ├── index.ts
 views/
-├── index.html
 ├── 404.html
 ├── expired.html
 .env
